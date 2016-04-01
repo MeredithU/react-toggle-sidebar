@@ -1,6 +1,6 @@
 # React Toggle Sidebar Navigation
 
-### This demonstrates how two sibling components can communicate to each other through React.
+### This demonstrates how two sibling React components can communicate to each other.
 
 ## Included
 
