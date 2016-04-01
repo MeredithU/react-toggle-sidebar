@@ -1,3 +1,23 @@
-@import 'bourbon';
+@import "~bourbon/app/assets/stylesheets/bourbon";
 @import 'grid-settings';
-@import 'neat';
+@import "~bourbon-neat/app/assets/stylesheets/neat";
+
+.container {
+  @include outer-container;
+}
+
+.sidebar-section {
+  @include span-columns(3);
+}
+
+.main-section {
+  @include span-columns(9);
+
+  .tile-grid {
+    @include outer-container;
+
+    .tile {
+      @include span-columns(4);
+    }
+  }
+}

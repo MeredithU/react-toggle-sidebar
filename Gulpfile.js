@@ -11,9 +11,9 @@ gulp.task('default', ['sass']);
 // Compil SASS files
 gulp.task('sass', function() {
   gulp.src('src/scss/**/*.scss')
-      .pipe(sass({
+      /*.pipe(sass({
         includePaths: bourbon,
         includePaths: neat
-      }))
+      }))*/
       .pipe(gulp.dest('dist/css'))
 });

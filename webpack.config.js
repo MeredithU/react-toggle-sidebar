@@ -1,4 +1,6 @@
 var path = require("path");
+var bourbon = require('node-bourbon').includePaths;
+var neat = require('node-neat').includePaths;
 
 module.exports = {
   context: path.resolve(__dirname + '/src'),
@@ -16,6 +18,10 @@ module.exports = {
   devServer: {
     inline: true,
     port: 8000
+  },
+
+  sassLoader: {
+    includePaths: [bourbon, neat]
   },
 
   module: {

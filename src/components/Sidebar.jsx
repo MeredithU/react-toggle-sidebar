@@ -4,11 +4,12 @@
 */
 
 import React from 'react';
+import '../scss/styles.scss';
 
 class Sidebar extends React.Component {
   render() {
     return (
-      <div>
+      <div className='sidebar-section'>
         <div>
           <h3>Sidebar</h3>
           <i className='fa fa-angle-double-right'></i>
