@@ -2,22 +2,147 @@
 @import 'grid-settings';
 @import "~bourbon-neat/app/assets/stylesheets/neat";
 
-.container {
-  @include outer-container;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+
+$font-stack: OpenSans, sans serif;
+
+html, body {
+  background-color: #fff;
+  font-family: $font-stack;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.sidebar-section {
-  @include span-columns(3);
+.top-container {
+  border-bottom: 1px solid #afabab;
+
+  .centered-title {
+    text-align: center;
+  }
 }
 
-.main-section {
-  @include span-columns(9);
+.middle-container {
+  background-color: #f7f8f7;
+  border-bottom: 1px solid #afabab;
 
-  .tile-grid {
+  .container {
     @include outer-container;
+  }
 
-    .tile {
-      @include span-columns(4);
+  .open-sidebar-section {
+    @include span-columns(3);
+
+    transition: all 0.3s ease-out;
+
+    .sidebar-header {
+      position: relative;
+      display: block;
+      cursor: pointer;
+
+      .arrow {
+        position: absolute;
+        top: .2em;
+        right: .8em;
+        font-size: 1.4em!important;
+        transition: all .3s ease-in-out;
+      }
+    }
+
+    ul {
+      border: 1px solid #afabab;
+      padding-left: 1em;
+
+      li {
+        font-size: 1em;
+        list-style: none;
+        line-height: 2.4em;
+      }
+    }
+  }
+
+  .closed-sidebar-section {
+    @include span-columns(1);
+
+    transition: all 0.3s ease-in;
+
+    h2, ul {
+      opacity: 0;
+
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .sidebar-header {
+      position: relative;
+      display: block;
+      cursor: pointer;
+
+      .arrow {
+        position: absolute;
+        top: .2em;
+        left: 2.8em;
+        font-size: 1.4em!important;
+        transition: all .3s ease-out-in;
+      }
+    }
+
+    ul {
+      border: 1px solid #afabab;
+      padding-left: 1em;
+
+      li {
+        font-size: 1em;
+        list-style: none;
+        line-height: 2.4em;
+      }
+    }
+  }
+
+  .open-main-section {
+    @include span-columns(9);
+
+    transition: all 0.3s ease-out;
+
+    background-color: #f7f8f7;
+
+    .tile-grid {
+      @include outer-container;
+
+      .tile {
+        @include span-columns(4);
+
+        background-color: #fff;
+        border: 1px solid #afabab;
+        padding: 1em 1em 0;
+
+        h3 {
+          margin: 0.3em 0 1em 0;
+        }
+      }
+    }
+  }
+
+  .closed-main-section {
+    @include span-columns(11);
+
+    transition: all 0.3s ease-in;
+
+    background-color: #f7f8f7;
+
+    .tile-grid {
+      @include outer-container;
+
+      .tile {
+        @include span-columns(4);
+
+        background-color: #fff;
+        border: 1px solid #afabab;
+        padding: 1em 1em 0;
+
+        h3 {
+          margin: 0.3em 0 1em 0;
+        }
+      }
     }
   }
 }

@@ -2,6 +2,10 @@
 
 ### This demonstrates how two sibling React components can communicate to each other.
 
+![Open Sidebar Image](https://github.com/meredithu/react-toggle-sidebar/raw/master/open-sidebar.jpg)
+
+![Closed Sidebar Image](https://github.com/meredithu/react-toggle-sidebar/raw/master/closed-sidebar.jpg)
+
 ## Included
 
 1. [React](http://facebook.github.io/react/)

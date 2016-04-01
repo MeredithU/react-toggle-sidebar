@@ -12,13 +12,35 @@ import MainSection from './components/MainSection.jsx';
 import './scss/styles.scss';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isNavBarOpen: true // status on whether navbar is open
+    };
+
+    this.setNavBarState = this.setNavBarState.bind(this);
+  }
+
+  setNavBarState(isNavBarOpen) {
+    this.setState({
+      isNavBarOpen: !this.state.isNavBarOpen
+    });
+  }
+
   render() {
     return (
-      <div className='container'>
-        <h1>React Toggle Sidebar</h1>
-        <h3>See how two sibling components communicate to each other</h3>
-        <Sidebar />
-        <MainSection />
+      <div>
+        <div className='top-container'>
+          <h1 className='centered-title'>React Toggle Sidebar</h1>
+          <h3 className='centered-title'>See how two sibling components communicate to each other</h3>
+        </div>
+        <div className='middle-container'>
+          <div className='container'>
+            <Sidebar isNavBarOpen={ this.state.isNavBarOpen } setNavBarState={ this.setNavBarState } />
+            <MainSection isNavBarOpen={ this.state.isNavBarOpen } />
+          </div>
+        </div>
       </div>
     )
   }
